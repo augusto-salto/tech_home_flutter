@@ -55,9 +55,9 @@ class _TelaIntroSecundariaState extends State<TelaIntroSecundaria> {
                                 left: 50,
 
                               ),
-                              child: Text('Graças a tecnologia PPP Tech, você pode iniciar e parar todas as operações do dispositivos remotamente', textAlign: TextAlign.center, style: TextStyle(
+                              child: Text('Com o TECH HOME você pode iniciar, parar e monitorar todos os seus dispositivos PPP Tech remotamente', textAlign: TextAlign.center, style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontSize: 16,
+                                fontSize: 17,
 
                               ),),
                             ),
