@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tech_home/objects/level_sensor.dart';
 import 'package:tech_home/utils/cores.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
+
 
 class TelaCaixa extends StatefulWidget {
   const TelaCaixa({Key? key}) : super(key: key);
@@ -9,7 +11,18 @@ class TelaCaixa extends StatefulWidget {
   _TelaCaixaState createState() => _TelaCaixaState();
 }
 
+
+
 class _TelaCaixaState extends State<TelaCaixa> {
+
+
+  @override
+  void initState() {
+    LevelSensor levelSensor = new LevelSensor("Nome Legal!");
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double valorAtual = 97;
@@ -118,13 +131,13 @@ class _TelaCaixaState extends State<TelaCaixa> {
                             ])
                       ])),
                       SizedBox(
-                        height: constante.maxHeight * 0.0005,
+                        height: constante.maxHeight * 0.05,
                       ),
                       Text('Última sincronização 13/11/2021 ás 17:15 Hrs', style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w300
                       ),),
-                      Container(
+                    /*  Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(constante.maxWidth * 0.05),
                         child: RaisedButton(
@@ -140,7 +153,7 @@ class _TelaCaixaState extends State<TelaCaixa> {
                               color: Colors.white
                           )),
                         ),
-                      ),
+                      ),*/
 
                       SizedBox(
                         width: 0,
