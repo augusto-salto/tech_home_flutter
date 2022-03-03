@@ -233,9 +233,9 @@ var list;
                     padding: EdgeInsets.symmetric(vertical: constante.maxHeight * 0.025),
                     //color: Color(PaletaCores.roxo2),
                     color: Color(PaletaCores.VERDE_PRIMARIO),
-                    onPressed: (){
-
-                    },
+                    onPressed: () {
+                                    Navigator.of(context).pushNamed(Rota.TELA_ADD_DEVICE);
+                                  },
                     elevation: 11,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(40.0))),
                     child: Text("Adicionar dispositivo", style: TextStyle(
