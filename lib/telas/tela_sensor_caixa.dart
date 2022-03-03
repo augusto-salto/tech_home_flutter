@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:tech_home/objects/level_sensor.dart';
 import 'package:tech_home/utils/cores.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
+import 'package:tech_home/utils/rotas.dart';
+import 'package:tech_home/my_widgets/appBar_Model.dart';
 
 
 class TelaCaixa extends StatefulWidget {
+
   const TelaCaixa({Key? key}) : super(key: key);
 
   @override
@@ -18,7 +20,7 @@ class _TelaCaixaState extends State<TelaCaixa> {
 
   @override
   void initState() {
-    LevelSensor levelSensor = new LevelSensor("Nome Legal!");
+    //LevelSensor levelSensor = new LevelSensor("Nome Legal!");
 
     super.initState();
   }
@@ -27,37 +29,14 @@ class _TelaCaixaState extends State<TelaCaixa> {
   Widget build(BuildContext context) {
     double valorAtual = 97;
     return Scaffold(
-      appBar: AppBar(
-
-        actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.settings))
-        ],
-        title: Text(
-          'Minha caixa d\' água',
-          style: TextStyle(
-              fontSize: 18, color: Colors.black, fontWeight: FontWeight.w500),
-        ),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        shadowColor: Colors.black,
-        iconTheme: IconThemeData(
-          color: Colors.black,
-        ),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Padding(
-            padding: const EdgeInsets.only(left: 25.0),
-            child: Icon(
-              Icons.arrow_back_ios,
-              color: Color(PaletaCores.VERDE_PRIMARIO),
-            ),
-          ),
-        ),
-        centerTitle: true,
-        elevation: 0,
+      appBar: AppBarWithConfig(
+        tittle: "Nome do sensor",
+        icone: [IconButton(onPressed: (){
+                                        Navigator.of(context).pushNamed(Rota.TELA_CONFIG_SENSOR);
+                                        },
+            icon: Icon(Icons.settings))],
       ),
+
       body: SafeArea(
         child: LayoutBuilder(
           builder: (ctx, constante) {
@@ -131,16 +110,23 @@ class _TelaCaixaState extends State<TelaCaixa> {
                             ])
                       ])),
                       SizedBox(
-                        height: constante.maxHeight * 0.05,
+                        height: constante.maxHeight * 0.07,
                       ),
-                      Text('Última sincronização 13/11/2021 ás 17:15 Hrs', style: TextStyle(
-                          fontSize: 11,
+                      Text('Última sincronização: 13/11/2021 ás 17:15 Hrs', style: TextStyle(
+                          fontSize: 14,
                           fontWeight: FontWeight.w300
                       ),),
-                    /*  Container(
+
+                     Container(
                         width: double.infinity,
-                        padding: EdgeInsets.all(constante.maxWidth * 0.05),
-                        child: RaisedButton(
+                        padding: EdgeInsets.all(constante.maxWidth * 0.01),
+                        child: IconButton(
+                          icon: Icon(Icons.refresh),
+                          onPressed: (){},
+                          iconSize: constante.maxWidth * 0.07,
+
+                        )
+                            /*RaisedButton(
                           padding: EdgeInsets.symmetric(vertical: constante.maxHeight * 0.025, horizontal: constante.maxWidth * 0.01),
                           //color: Color(PaletaCores.roxo2),
                           color: Color(PaletaCores.VERDE_PRIMARIO),
@@ -152,8 +138,8 @@ class _TelaCaixaState extends State<TelaCaixa> {
                           child: Text("Editar dispositivo", style: TextStyle(
                               color: Colors.white
                           )),
-                        ),
-                      ),*/
+                        ),*/
+                      ),
 
                       SizedBox(
                         width: 0,

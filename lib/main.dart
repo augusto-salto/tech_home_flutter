@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tech_home/help.dart';
 import 'package:tech_home/telas/tela_cadastro.dart';
 import 'package:tech_home/telas/tela_cadastro_sliver.dart';
+import 'package:tech_home/telas/tela_config_sensor.dart';
 import 'package:tech_home/telas/tela_dashboard.dart';
 import 'package:tech_home/telas/tela_intro.dart';
 import 'package:tech_home/telas/tela_intro_2.dart';
@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
           Rota.TELA_CADASTRO_SLIVER : (ctx) => TelaCadastroSliver(),
           Rota.TELA_DASHBOARD : (ctx) => TelaDashboard(),
           Rota.TELA_CAIXA_AGUA : (ctx) => TelaCaixa(),
+          Rota.TELA_CONFIG_SENSOR : (ctx) => TelaConfigSensor(),
 
         },
       title: 'Tech Home',
