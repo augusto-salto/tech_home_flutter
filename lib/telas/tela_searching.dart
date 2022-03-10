@@ -11,6 +11,9 @@ class TelaSearching extends StatefulWidget {
 }
 
 class _TelaSearchingState extends State<TelaSearching> {
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +23,12 @@ class _TelaSearchingState extends State<TelaSearching> {
           child: Center(child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircularProgressIndicator(
-                color: Color(PaletaCores.VERDE_PRIMARIO),
+              Hero(
+                transitionOnUserGestures: true,
+                tag: "CircularTag",
+                child: CircularProgressIndicator(
+                  color: Color(PaletaCores.VERDE_PRIMARIO),
+                ),
               ),
               SizedBox(
                 height: 50,

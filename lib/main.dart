@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
           Rota.TELA_CONFIG_SENSOR : (ctx) => TelaConfigSensor(),
           Rota.TELA_ADD_DEVICE : (ctx) => TelaAddDevice(),
           Rota.TELA_SPLASH_SEARCH_DEVICE : (ctx) => TelaSplashSearchDevide(),
+          Rota.TELA_DEVICE_IS_FOUND : (ctx) => TelaAddDevice(),
 
         },
       title: 'Tech Home',

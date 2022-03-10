@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_home/telas/tela_dispositivo_encontrado.dart';
 import 'package:tech_home/telas/tela_searching.dart';
 
 
@@ -11,11 +12,11 @@ class TelaSplashSearchDevide extends StatefulWidget {
 }
 
 class _TelaSplashSearchDevideState extends State<TelaSplashSearchDevide> {
-
+  bool deviceIsFound = true;
 
 
   Future<String> getFutureDados() async =>
-      await Future.delayed(Duration(seconds: 25), () {
+      await Future.delayed(Duration(seconds: 5), () {
         return 'Dados recebidos...';
       });
 
@@ -25,10 +26,14 @@ class _TelaSplashSearchDevideState extends State<TelaSplashSearchDevide> {
       future: getFutureDados(),
         builder: (context, snapshot){
         if(snapshot.hasData){
-          return Center(
-            child: Text("CARREGADO!"),
-          );
-        }else{
+          if(deviceIsFound){
+            return TDeviceFound();
+          }
+          else {
+            return TelaSearching();
+          }
+        }
+        else{
           return TelaSearching();
         }
 

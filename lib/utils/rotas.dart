@@ -10,6 +10,7 @@ class Rota{
   static const TELA_CONFIG_SENSOR = "tela_config_sensor";
   static const TELA_ADD_DEVICE = "tela_add_device";
   static const TELA_SPLASH_SEARCH_DEVICE = "tela_splash_search_device";
+  static const TELA_DEVICE_IS_FOUND = "tela_device_is_found";
 
 
 
